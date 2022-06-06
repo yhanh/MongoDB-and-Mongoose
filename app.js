@@ -46,18 +46,28 @@ const Student = mongoose.model("Student", studentSchema);
 //   );
 
 // findOneAndUpdate
-Student.findOneAndUpdate(
-  { name: "Ann Chen" },
-  { name: "Yin-Yin Huang" },
-  { new: true }
-).then((meg) => {
-  console.log(meg);
-});
+// Student.findOneAndUpdate(
+//   { name: "Ann Chen" },
+//   { name: "Yin-Yin Huang" },
+//   { new: true }
+// ).then((meg) => {
+//   console.log(meg);
+// });
+
+// deleteOne
+// Student.deleteOne({ "scholarship.merit": { $gte: 2800 } }).then((meg) => {
+//   console.log(meg);
+// });
+
+// findOneAndDelete
+Student.findOneAndDelete({ "scholarship.merit": { $gte: 2800 } }).then((meg) => {
+  //   console.log(meg);
+  // });
 
 // find
-// Student.find().then((data) => {
-//   console.log(data);
-// });
+Student.find().then((data) => {
+  console.log(data);
+});
 
 // find objects in students
 // way 1
