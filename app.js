@@ -31,15 +31,43 @@ const studentSchema = new mongoose.Schema({
 // create a model for students
 const Student = mongoose.model("Student", studentSchema);
 
+// updateOne
+// Student.updateOne({ name: "Hannah Huang" }, { name: "Thomas Pan" }).then(
+//   (meg) => {
+//     console.log(meg);
+//   }
+// );
+
+// updateMany
+// Student.updateMany({ major: "LA" }, { major: "Landscape Architecture" }).then(
+//     (meg) => {
+//       console.log(meg);
+//     }
+//   );
+
+// findOneAndUpdate
+Student.findOneAndUpdate(
+  { name: "Ann Chen" },
+  { name: "Yin-Yin Huang" },
+  { new: true }
+).then((meg) => {
+  console.log(meg);
+});
+
+// find
+// Student.find().then((data) => {
+//   console.log(data);
+// });
+
 // find objects in students
 // way 1
 // Student.find({}).then((data) => {
 //   console.log(data);
 // });
 // way 2 找到第一個符合的資料
-Student.findOne({name: "Ann Chen"}).then((data) => {
-  console.log(data);
-});
+// Student.findOne({name: "Ann Chen"}).then((data) => {
+//   console.log(data);
+// });
 
 // create an object
 // const Ann = new Student({
